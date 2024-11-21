@@ -1,8 +1,11 @@
 [package]
 name = "jane2411"
-version = "0.0.1"
+version = "0.0.2"
 authors = ["Logan Teder"]
 description = "My attempt at a solution to Jane Street's November 2024 puzzle"
+
+[package.metadata]
+rustflags = ["-C", "target-cpu=native"]
 
 [dependencies]
 indicatif = "0.17"
@@ -10,4 +13,8 @@ rand = "0.8"
 rayon = "1.10.0"
 
 [profile.dev]
-opt-level = 2
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+strip = true
