@@ -100,8 +100,8 @@ def run_simulation_with_progress(total_trials: int, batch_size: int) -> float:
     return positive_results / total_trials
 
 if __name__ == "__main__":
-    trials = int(1e10)
+    trials = int(1e9)
     batch_size = int(1e7)
     
     rate = run_simulation_with_progress(trials, batch_size)
-    print(f"Rate of positive results after {trials} trials: {rate}")
+    print(f"Probability after {trials} trials: {rate:.10f}")

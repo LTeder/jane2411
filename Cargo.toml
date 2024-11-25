@@ -1,6 +1,6 @@
 [package]
 name = "jane2411"
-version = "0.0.2"
+version = "0.0.3"
 authors = ["Logan Teder"]
 description = "My attempt at a solution to Jane Street's November 2024 puzzle"
 
@@ -10,7 +10,8 @@ rustflags = ["-C", "target-cpu=native"]
 [dependencies]
 indicatif = "0.17"
 rand = "0.8"
-rayon = "1.10.0"
+rand_xoshiro = "0.6.0"
+rayon = "1.10"
 
 [profile.dev]
 opt-level = 3
