@@ -70,8 +70,8 @@ fn compute_equidistant_point_y(p1: &Point, p2: &Point, fixed_y: f64) -> bool {
 }
 
 fn main() {
-    let chunks = 10_000_000;
-    let trials_per_chunk = 250_000;
+    let chunks = 100_000;
+    let trials_per_chunk = 100_000;
     let total_trials = chunks as u64 * trials_per_chunk;
 
     let progress_bar = ProgressBar::new(chunks as u64);
