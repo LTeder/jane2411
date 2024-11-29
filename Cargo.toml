@@ -1,4 +1,5 @@
 [package]
+edition = "2021"
 name = "jane2411"
 version = "0.0.4"
 authors = ["Logan Teder"]

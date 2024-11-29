@@ -30,7 +30,7 @@ fn do_trial(u: f64, v: f64) -> f64 {
 
 #[inline(always)]
 fn main() {
-    let chunks: u64 = 5_000_000;
+    let chunks: u64 = 20_000_000;
     let trials_per_chunk = 250_000;
     let increment = 10_000;
     let total_trials = chunks * trials_per_chunk;
@@ -38,7 +38,7 @@ fn main() {
     let progress_bar = ProgressBar::new(chunks / increment);
     progress_bar.set_style(
         indicatif::ProgressStyle::default_bar()
-            .template("[{elapsed_precise}] {bar:40.cyan/blue} {pos}/{len} {msg}")
+            .template("[{elapsed_precise}|{eta_precise}] {wide_bar} {pos}/{len}")
             .unwrap()
     );
     let progress = AtomicU64::new(0);
@@ -61,10 +61,9 @@ fn main() {
         })
         .sum();
 
-    progress_bar.finish_with_message("Completed");
+    progress_bar.finish();
     println!(
         "Probability after {} trials: {:.12}",
-        total_trials,
-        results / total_trials as f64
+        total_trials, results / total_trials as f64
     );
 }
